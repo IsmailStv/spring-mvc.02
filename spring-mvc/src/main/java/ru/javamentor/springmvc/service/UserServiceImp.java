@@ -6,14 +6,14 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.javamentor.springmvc.dao.UserDao;
 import ru.javamentor.springmvc.model.User;
 
-
 import java.util.List;
 
 @Service
 @Transactional
-public class UserServiceImp implements UserService{
+public class UserServiceImp implements UserService {
 
     private final UserDao userDao;
+
     @Autowired
     public UserServiceImp(UserDao userDao) {
         this.userDao = userDao;

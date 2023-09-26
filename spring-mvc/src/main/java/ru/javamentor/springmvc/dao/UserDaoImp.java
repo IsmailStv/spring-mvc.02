@@ -3,14 +3,14 @@ package ru.javamentor.springmvc.dao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.persistence.TypedQuery;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import ru.javamentor.springmvc.model.User;
 
 import java.util.List;
 
 
-@Component
-public class UserDaoImp implements UserDao{
+@Repository
+public class UserDaoImp implements UserDao {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -30,7 +30,7 @@ public class UserDaoImp implements UserDao{
     @Override
     public void deleteUser(Long id) {
         User user = entityManager.find(User.class, id);
-        if (user != null){
+        if (user != null) {
             entityManager.remove(user);
         }
     }
